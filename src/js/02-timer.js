@@ -55,6 +55,7 @@ const timeUpdate = () => {
   minutesUpdate.textContent = addLeadingZero(dateUpdate.minutes);
   secondsUpdate.textContent = addLeadingZero(dateUpdate.seconds);
   ms -= 1000;
+
   if (ms < 0) {
     clearInterval(countDownInterval);
     daysUpdate.textContent = '00';
