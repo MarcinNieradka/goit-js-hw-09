@@ -8,6 +8,10 @@ form.addEventListener('submit', event => {
   const step = Number(event.target.elements.step.value);
   const amount = Number(event.target.elements.amount.value);
 
+  if (delay <= 0 || step <= 0 || amount <= 0) {
+    return Notiflix.Notify.failure(`Provide numbers above 0`);
+  }
+
   for (let i = 1; i <= amount; i++) {
     createPromise(i, delay + step * (i - 1))
       .then(({ position, delay }) => {
